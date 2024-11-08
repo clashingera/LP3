@@ -1,4 +1,10 @@
+Yes, the code is a good implementation of Huffman Encoding using a greedy strategy. The code accurately follows the Huffman Encoding steps by calculating frequencies, building a tree based on minimum frequencies, and then generating binary codes for each character. Below is a simplified version with explanations.
 
+---
+
+### 1) Simplified Code with Explanation
+
+```python
 class Node:
     # Node class to store characters, frequencies, and left/right children
     def __init__(self, left=None, right=None, value=None, frequency=None):
@@ -64,8 +70,7 @@ class HuffmanEncoding:
 string = input("Enter a string to encode: ")
 encoder = HuffmanEncoding(string)
 encoder.encode()
-
-'''
+```
 
 ---
 
@@ -118,43 +123,3 @@ Enter a string to encode: hello
   - **Encoding dictionary**: \(O(m)\) for storing the codes.
   
   Total space complexity is \(O(m)\).
-Sure, here’s the explanation and updated code with comments. This version of Huffman Encoding uses classes, takes input from the user, and builds the tree step-by-step with explanations.
-
-### Code Explanation
-
-1. **Node Class**:
-   - The `Node` class represents each node in the Huffman tree.
-   - Each `Node` can store a character (`value`), frequency (`frequency`), and has pointers to `left` and `right` child nodes.
-   - `children()` method returns the children nodes for easier access in tree traversal.
-
-2. **Huffman_Encoding Class**:
-   - The `Huffman_Encoding` class orchestrates the entire process of encoding.
-   - It starts by initializing the string to be encoded and preparing data structures (`q` for the nodes and `encoding` for the final binary codes).
-
-3. **char_frequency**:
-   - Counts the frequency of each character in the input string.
-   - Creates a node for each unique character with its frequency and stores these nodes in a list.
-   - Sorts the nodes by frequency to use a priority queue-like structure for building the tree.
-
-4. **build_tree**:
-   - Constructs the Huffman Tree by combining nodes with the lowest frequencies.
-   - Repeatedly merges the two nodes with the smallest frequency to create a parent node with a combined frequency.
-   - Adds this new parent node back to the list, ensuring the list remains sorted.
-
-5. **helper**:
-   - A recursive helper function for traversing the Huffman Tree.
-   - Assigns binary codes by going left (`0`) and right (`1`).
-   - When it reaches a leaf node (contains a character), it saves the binary string as that character’s encoding.
-
-6. **huffman_encoding**:
-   - Initiates the encoding process by calling the `helper` function starting from the root of the tree.
-
-7. **print_encoding**:
-   - Displays the final Huffman codes for each character in a formatted table.
-
-8. **encode**:
-   - Runs the encoding steps in sequence: calculating frequency, building the tree, generating codes, and printing the encoding.
-
-### Complexity
-The time complexity for building the tree is \(O(n \log n)\), where \(n\) is the number of unique characters in the input string.
-'''
