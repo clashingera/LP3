@@ -1,10 +1,4 @@
-Yes, the code is a good implementation of Huffman Encoding using a greedy strategy. The code accurately follows the Huffman Encoding steps by calculating frequencies, building a tree based on minimum frequencies, and then generating binary codes for each character. Below is a simplified version with explanations.
 
----
-
-### 1) Simplified Code with Explanation
-
-```python
 class Node:
     # Node class to store characters, frequencies, and left/right children
     def __init__(self, left=None, right=None, value=None, frequency=None):
@@ -70,10 +64,9 @@ class HuffmanEncoding:
 string = input("Enter a string to encode: ")
 encoder = HuffmanEncoding(string)
 encoder.encode()
-```
 
----
 
+'''
 ### 2) Code Explanation
 
 - **Class `Node`**:
@@ -123,3 +116,4 @@ Enter a string to encode: hello
   - **Encoding dictionary**: \(O(m)\) for storing the codes.
   
   Total space complexity is \(O(m)\).
+'''
